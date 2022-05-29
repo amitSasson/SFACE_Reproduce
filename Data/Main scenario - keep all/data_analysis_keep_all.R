@@ -14,13 +14,17 @@ df$regasp <- as.factor(df$regasp)
 df$crcfh <- as.factor(df$crcfh)
 df$endo <- as.factor(df$endo)
 
+stand_formula <- y ~ A + gender + bmicum_cat + regasp + alcocum + caloriecum + crcfh + endo + actmcum
+iptw_formula <- A ~ gender + bmicum_cat + regasp + alcocum + caloriecum + crcfh + endo + actmcum
+
+
 #### Different estimands under S-Monotonicity ####
 #func to calculate sface1 or sface2 using standardization for a given df
 stand <- function(df, sface = "sface1")
 {
   subtype <- ifelse(sface == "sface1", 1, 2)
-  val <- sface(stand_formula = y ~ A + X1 + X2,
-               iptw_formula = A ~ X1 + X2,
+  val <- sface(stand_formula = stand_formula,
+               iptw_formula = iptw_formula,
                exposure = "A",
                outcome = "y",
                df = df,
@@ -37,8 +41,8 @@ stand <- function(df, sface = "sface1")
 iptw <- function(df, sface = "sface1")
 {
   subtype <- ifelse(sface == "sface1", 1, 2)
-  val <- sface(stand_formula = y ~ A + X1 + X2,
-               iptw_formula = A ~ X1 + X2,
+  val <- sface(stand_formula = stand_formula,
+               iptw_formula = iptw_formula,
                exposure = "A",
                outcome = "y",
                df = df,
@@ -78,8 +82,8 @@ stand_total_naive <- function(df, sface = "sface1")
 DR <- function(df, sface = "sface1")
 {
   subtype <- ifelse(sface == "sface1", 1, 2)
-  val <- sface(stand_formula = y ~ A + X1 + X2,
-               iptw_formula = A ~ X1 + X2,
+  val <- sface(stand_formula = stand_formula,
+               iptw_formula = iptw_formula,
                exposure = "A",
                outcome = "y",
                df = df,
@@ -183,8 +187,8 @@ save(ans, file = str_c("data_diff_sface2_keep_all_60_70", ".RData"))
 stand_RR <- function(df, sface = "sface1")
 {
   subtype <- ifelse(sface == "sface1", 1, 2)
-  val <- sface(stand_formula = y ~ A + X1 + X2,
-               iptw_formula = A ~ X1 + X2,
+  val <- sface(stand_formula = stand_formula,
+               iptw_formula = iptw_formula,
                exposure = "A",
                outcome = "y",
                df = df,
@@ -200,8 +204,8 @@ stand_RR <- function(df, sface = "sface1")
 iptw_RR <- function(df, sface = "sface1")
 {
   subtype <- ifelse(sface == "sface1", 1, 2)
-  val <- sface(stand_formula = y ~ A + X1 + X2,
-               iptw_formula = A ~ X1 + X2,
+  val <- sface(stand_formula = stand_formula,
+               iptw_formula = iptw_formula,
                exposure = "A",
                outcome = "y",
                df = df,
@@ -238,8 +242,8 @@ stand_total_naive_RR <- function(df, sface = "sface1")
 DR_RR <- function(df, sface = "sface1")
 {
   subtype <- ifelse(sface == "sface1", 1, 2)
-  val <- sface(stand_formula = y ~ A + X1 + X2,
-               iptw_formula = A ~ X1 + X2,
+  val <- sface(stand_formula = stand_formula,
+               iptw_formula = iptw_formula,
                exposure = "A",
                outcome = "y",
                df = df,
