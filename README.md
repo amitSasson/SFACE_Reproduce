@@ -25,7 +25,7 @@ The folder **Data** contains the following subfolders:
 - Missing data - weights 
 along with a pre process file which is relevant for all three scenarios. 
 
-The first folder **Main scenario - keep all ** holds the code and results relevant for the main scenario analysed in the paper. The other two folders hold code and results for the two other scenarios referenced in the SM. 
+The first folder **Main scenario - keep all** holds the code and results relevant for the main scenario analysed in the paper. The other two folders hold code and results for the two other scenarios referenced in the SM. 
 
 In each scenario, the following steps were made: 
 1. pre process 
