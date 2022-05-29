@@ -11,8 +11,10 @@ The folder **Simulations** contains the following subfolders, each holding code 
 - Study II -The unmeasured covariate U had on Y2 varied.
 - Study III - The models were misspecified. 
 
-In each file, there is code available to rerun this analysis both for the RR and the difference scale. 
-There is also a results folder with the results of each scenario as an RData file. 
+In each subfolder, there is 
+- Code to rerun this analysis both for the RR and the difference scale. 
+- A  results (sub)subfolder, containing the results in RData files. 
+- A combine file, to combine all the results to a TeX table or a plot. 
 
 
 ## Data
