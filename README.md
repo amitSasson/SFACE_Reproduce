@@ -39,6 +39,6 @@ In each scenario, the following steps were made:
 In each file, there is code available to rerun this analysis both for the RR and the difference scale. 
 There is also a results folder with the results of each scenario as an RData file. 
 
-## Warning 
+## Note  
 
 Please note that the code was run separately for each effect scale and subtype. To use this code for all scales and subtypes effectively, one might want to adjust the code. 
