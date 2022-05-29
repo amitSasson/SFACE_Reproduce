@@ -29,10 +29,10 @@ along with a pre process file which is relevant for all three scenarios.
 The first folder **Main scenario - keep all** holds the code and results relevant for the main scenario analysed in the paper. The other two folders hold code and results for the two other scenarios referenced in the SM. 
 
 In each scenario, the following steps were made: 
-1. pre process 
-2. calculating weights (for missing subtype and missing outcome, if needed) 
-3. data analysis 
-4. sensitivity analysis (only for the main scenario). 
+1. Pre process of the data. 
+2. Calculating weights (for missing subtype and missing outcome, if needed). 
+3. Data analysis (under S-Monotonicity for both subtypes).
+4. Sensitivity analysis (only for the main scenario). 
 
 In each file, there is code available to rerun this analysis both for the RR and the difference scale. 
 There is also a results folder with the results of each scenario as an RData file. 
