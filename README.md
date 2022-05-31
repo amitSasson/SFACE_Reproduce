@@ -21,24 +21,15 @@ In each subfolder, there is
 
 - In this paper, we used data from two large US cohorts, the  Nurses Health Study (NHS) and the Health Professionals Follow-up Study (HPFS). 
 
-The folder **Data** contains the following subfolders: 
--  Main scenario - keep all
-- Missing data - has outcome data
-- Missing data - weights 
+The folder **Data** contains the following files: 
+- calc_weights.R -  script  for calculating weights to adjust for missing MSI values. 
+- data_analysis.R -  script for analysing the data (under S-Monotonicity for both subtypes), both for the main scenario and for the two additional scenario (see section C of the SM). 
+- data_analysis_sensitivity.R -  script for analysing the data using the suggested sensitivity methods (only for the main scenario).
+- pseudo_dataset_for_weights_SFACE.csv - a pseudo dataset with a similar design with the same sample size and with the same number of covariates, same type of covariates, and same marginal distribution for the covariates as in our dataset. 
+- table_covariates.R - script for creating descriptive tables, showing the distribution of the covariates and the models estimators (see section C in the SM)
+- a results folder with the results of each scenario as an RData file. 
 
-along with a pre process file which is relevant for all three scenarios. 
-
-The first folder **Main scenario - keep all** holds the code and results relevant for the main scenario analysed in the paper. The other two folders hold code and results for the two other scenarios referenced in the SM. 
-
-In each scenario, the following steps were made: 
-1. Pre process of the data. 
-2. Calculating weights (for missing subtype and missing outcome, if needed). 
-3. Data analysis (under S-Monotonicity for both subtypes).
-4. Sensitivity analysis (only for the main scenario). 
-
-In each file, there is code available to rerun this analysis both for the RR and the difference scale. 
-There is also a results folder with the results of each scenario as an RData file. 
-
+All the scripts can be run using the pseudo dataset. Of course, the results will be different than in the paper. 
 ## Note  
 
 Please note that the code was run separately for each effect scale and subtype. To use this code for all scales and subtypes effectively, one might want to adjust the code. 
