@@ -20,13 +20,18 @@ stand_formula <- y ~ A + gender + bmicum_cat + regasp + alcocum + caloriecum + c
 iptw_formula <- A ~ gender + bmicum_cat + regasp + alcocum + caloriecum + crcfh + endo + actmcum
 
 #for calculating the main scenario, skip this part.
+
 #Scenario 2: has outcome data & weights
-#df <- df %>% filter(msin_avaliable == 1 | is.na(msin_avaliable))
+#df <- df %>% filter(has_outcome_data == 1)
 
 #Scenario 3: has outcome data
-#df <- df %>% filter(msin_avaliable == 1 | is.na(msin_avaliable))
-#df$weight <- 1
-
+#df <- df %>% filter(has_outcome_data == 1)
+#fit <- glm(has_outcome_data ~ gender + bmicum_cat + regasp + alcocum + caloriecum + crcfh + endo + actmcum ,
+#          df,
+#           family = "binomial",
+#           weights = weight)
+#pred <-  predict(fit, type = "response")
+#df$weight <- df$weight*1/pred
 
 
 #### Different estimands under S-Monotonicity ####
